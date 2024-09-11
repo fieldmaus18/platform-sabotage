@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Experimenting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .title {
+            background: url(rainbow.jpeg);
+            background-size: cover;
+            background-position: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 100px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 30px;
+            margin-right: 100px;
+        }
+
+        .heading {
+            font-size: 30px;
+            font-style: italic;
+            text-align: right;
+            margin-right: 35px;
+        }
+
+        .separator {
+            border-bottom: 1px solid black;
+            margin: 5px 0;
+        }
+
+        .flexbox-container-1 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .flexbox-container-2 {
+            display: flex;
+            gap: 2px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .flex-item {
+            background-color: rgb(183, 202, 255);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .flex-item-small {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .flex-item-medium {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            flex: 2;
+            border: 1px solid black;
+        }
+
+        .flex-item-large {
+            background-color: white;
+            color: black;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid black;
+            flex: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">CSS Practice</div>
+<div class="heading">finally I can make a website</div>
+<div class="separator"></div>
+<div class="flexbox-container-1">
+    <div class="flex-item"> go here </div>
+    <div class="flex-item"> or here! </div>
+    <div class="flex-item"> no what about me? </div>
+    <div class="flex-item"> go here also! </div>
+</div>
+
+<div class="flexbox-container-2">
+    <div class="flex-item-small"> this is some even less important info that you don't really look at </div>
+    <div class="flex-item-large"><img src="pizzarat.jpg"></div>
+    <div class="flex-item-medium"> this is some info that corresponds with the image right next to it</di
+</div>
+</body>
+</body>
+</html>
