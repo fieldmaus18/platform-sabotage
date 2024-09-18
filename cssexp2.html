@@ -8,144 +8,305 @@
         *{
             margin: 0;
             padding: 0;
-        }
 
+        }
         body {
-            background: rgb(96, 96, 133);
+            background: rgb(172, 204, 255);
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .head {
-            position: realtive;
-            width: 500px;
-            height: 500px;
+            position: relative;
+            width: 300px;
+            height: 200px;
             background: bisque;
-            border-radius: 50% 50% 30% 30%;
-            box-shadow: inset 0 0 20px gray;
-            animation: embarrassed 2s infinite;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgb(183, 183, 183);
+            top: 200px
         }
 
-        .hair {
+        .hair-side {
             position: absolute;
-            width: 500px;
-            height: 300px;
-            background: rgb(65, 38, 38);
-            top: -70px;
-            border-radius: 50% 50% 0 0;
+            width: 300px;
+            height: 200px;
+            background: bisque;
+            border-radius: 50%;
+            border-top: 30px solid rgb(126, 114, 89);
+
+        }
+
+        .hair-front {
+            position: absolute;
+            width: 170px;
+            height: 100px;
+            background: rgb(146, 133, 105);
+            border-radius: 50%;
+            top: -45px;
+            left: 65px;
             z-index: 1;
         }
 
-        .eye-left {
+        .ear-left {
             position: absolute;
-            width: 100px;
-            height: 70px;
-            background: white;
-            top: 250px;
-            left: 150px;
-            border-radius: 50%;
-        }
-
-        .eye-right {
-            position: absolute;
-            width: 100px;
-            height: 70px;
-            background: white;
-            top: 250px;
-            right: 150px;
-            border-radius: 50%;
-        }
-
-        .iris-left {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgb(73, 40, 40);
-            top: 5px;
-            left: 20px;
-            border-radius: 50%;
-            animation: rukiddingme 5s infinite;
-        }
-
-        .iris-right {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgb(73, 40, 40);
-            top: 5px;
-            right: 20px;
-            border-radius: 50%;
-            animation: rukiddingme 5s infinite;
-        }
-
-        .nose {
-            position: absolute;
-            width: 50px;
-            height: 70px;
+            width: 25px;
+            height: 50px;
             background: bisque;
-            border-radius: 50%;
-            border-bottom: 5px solid black;
-            top: 315px;
-            left: 315px;
-            animation: embarrassed 2s infinite;
+            border-radius: 50% 50% 20% 30%;
+            top: 100px;
+            left: -20px;
+            z-index: -1
+        }
 
+        .ear-right {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            background: bisque;
+            border-radius: 50% 50% 30% 20%;
+            top: 110px;
+            right: -20px;
+            z-index: -1
         }
 
         .mouth {
             position: absolute;
+            width: 120px;
+            height: 30px;
+            background: rgb(133, 88, 96);
+            border-radius: 0% 0% 50% 50%;
+            border-bottom: 15px solid pink;
+            border-top: 10px solid pink;
+            top: 160px;
+            left: 89px;
+        }
+
+        .teeth {
+            position: absolute;
             width: 90px;
-            height: 40px;
+            height: 25px;
+            background: white;
+            left: 15px
+        }
+
+        .nose {
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: bisque;
+            border-left:30px solid bisque;
+            border-right: 30px solid bisque;
+            border-top: 20px solid rgb(200, 154, 154);
+            z-index: 1;
+            top: -30px;
+            left: 30px; 
+        }
+
+        .eye-left {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            border-bottom: 20px solid bisque;
+            top: -70px;
+            left: -50px;
+            z-index: 1
+        }
+
+        .iris-left {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgb(113, 143, 140);
+            border-radius: 50%;
+            top: 0px;
+            left: 25px;
+        }
+
+        .eye-right {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            border-bottom: 20px solid bisque;
+            top: -70px;
+            right: -50px;
+            z-index: 1;
+        }
+
+        .iris-right {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgb(113, 143, 140);
+            border-radius: 50%;
+            top: 0px;
+            right: 25px;
+        }
+
+        .eyebrow-left {
+            position: absolute;
+            width: 100px;
+            height: 60px;
             background: bisque;
             border-radius: 50%;
-            border-top: 7px solid black;
-            top: 420px;
-            left: 297px;
-            animation: embarrassed 2s infinite;
+            border-top: 10px solid rgb(126, 114, 89);
+            top: -95px;
+            left: -60px;
         }
 
-        @keyframes embarrassed {
-            0% {
-                background-color: bisque; 
-            }
-            25% {
-                background-color: rgb(148, 198, 148);
-            }
-            50% {
-                background-color: red;
-            }
-            75% {
-                background-color: rgb(238, 175, 185);
-            }
-            100% {
-                background-color: bisque;
-            }
+        .eyebrow-right {
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            background: bisque;
+            border-radius: 50%;
+            border-top: 10px solid rgb(126, 114, 89);
+            top: -95px;
+            right: -60px;
         }
 
-        @keyframes rukiddingme {
-            0% {
-                left: 20px;
-            }
-            50% {
-                left: 40px;
-            }
-            100% {
-                left: 20px;
-            }
+        .tshirt {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            background: rgb(237, 237, 237);
+            border-radius: 50%;
+            border-bottom: 50px solid rgb(172, 204, 255);
+            top: 180px;
+            z-index: -1;
+        }
+
+        .wing-base-left {
+            position: absolute;
+            width: 100px;
+            height: 170px;
+            background: rgb(237, 237, 237);
+            border-radius: 50%;
+            top: -80px;
+            left: 20px;
+            z-index: -1;
+            transform: rotate(20deg);
+            
+        }
+
+        .wing-base-right {
+            position: absolute;
+            width: 100px;
+            height: 170px;
+            background: rgb(237, 237, 237);
+            border-radius: 50%;
+            top: -80px;
+            right: 20px;
+            z-index: -1;
+            transform: rotate(-20deg);
+            
+        }
+
+        .feather-left {
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            background: rgb(237, 237, 237);
+            border-radius: 50%;
+            top: -145px;
+            left: 5px;
+            transform: rotate(65deg);
+        }
+        .feather-leftA {
+            top: -130px;
+            left: 10px;
+            transform: rotate(65deg);
+        }
+        .feather-leftB {
+            width: 130px;
+            top: -115px;
+            left: -25px;
+            transform: rotate(45deg);
+        }
+        .feather-leftC {
+            width: 120px;
+            top: -70px;
+            left: -35px;
+            transform: rotate(10deg);
+        }
+
+        .feather-right {
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            background: rgb(237, 237, 237);
+            border-radius: 50%;
+            top: -145px;
+            right: 5px;
+            transform: rotate(-65deg);
+        }
+        .feather-rightA {
+            top: -130px;
+            right: 10px;
+            transform: rotate(-65deg);
+        }
+        .feather-rightB {
+            width: 130px;
+            top: -115px;
+            right: -25px;
+            transform: rotate(-45deg);
+        }
+        .feather-rightC {
+            width: 120px;
+            top: -70px;
+            right: -35px;
+            transform: rotate(-10deg);
+        }
+        
+        .heading {
+            font-size: 30px;
+            font-style: italic;
+            text-align: center;
+            margin-right: 35px;
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="head">
-        <div class="hair"></div>
+        <div class ="hair-side">
+            <div class ="hair-front"></div>
+        </div>
+        <div class="ear-left"></div>
+        <div class ="ear-right"></div>
+        <div class="mouth">
+            <div class="teeth">
+            </div>
+        <div class="nose"></div>
         <div class="eye-left">
             <div class="iris-left"></div>
         </div>
         <div class="eye-right">
             <div class="iris-right"></div>
         </div>
-        <div class="nose"></div>
-        <div class="mouth"></div>
+        <div class="eyebrow-left"></div>
+        <div class="eyebrow-right"></div>
     </div>
+    <div class="tshirt"></div>
+    <div class="wing-base-left"></div>
+    <div class="feather-left feather-leftA"></div>
+    <div class="feather-left feather-leftB"></div>
+    <div class="feather-left feather-leftC"></div>
+    <div class="wing-base-right"></div>
+    <div class="feather-right feather-rightA"></div>
+    <div class="feather-right feather-rightB"></div>
+    <div class="feather-right feather-rightC"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="heading">Please give your social security number</div>
 </body>
 </html>
