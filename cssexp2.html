@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(96, 96, 133);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head {
+            position: realtive;
+            width: 500px;
+            height: 500px;
+            background: bisque;
+            border-radius: 50% 50% 30% 30%;
+            box-shadow: inset 0 0 20px gray;
+            animation: embarrassed 2s infinite;
+        }
+
+        .hair {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background: rgb(65, 38, 38);
+            top: -70px;
+            border-radius: 50% 50% 0 0;
+            z-index: 1;
+        }
+
+        .eye-left {
+            position: absolute;
+            width: 100px;
+            height: 70px;
+            background: white;
+            top: 250px;
+            left: 150px;
+            border-radius: 50%;
+        }
+
+        .eye-right {
+            position: absolute;
+            width: 100px;
+            height: 70px;
+            background: white;
+            top: 250px;
+            right: 150px;
+            border-radius: 50%;
+        }
+
+        .iris-left {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(73, 40, 40);
+            top: 5px;
+            left: 20px;
+            border-radius: 50%;
+            animation: rukiddingme 5s infinite;
+        }
+
+        .iris-right {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(73, 40, 40);
+            top: 5px;
+            right: 20px;
+            border-radius: 50%;
+            animation: rukiddingme 5s infinite;
+        }
+
+        .nose {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: bisque;
+            border-radius: 50%;
+            border-bottom: 5px solid black;
+            top: 315px;
+            left: 315px;
+            animation: embarrassed 2s infinite;
+
+        }
+
+        .mouth {
+            position: absolute;
+            width: 90px;
+            height: 40px;
+            background: bisque;
+            border-radius: 50%;
+            border-top: 7px solid black;
+            top: 420px;
+            left: 297px;
+            animation: embarrassed 2s infinite;
+        }
+
+        @keyframes embarrassed {
+            0% {
+                background-color: bisque; 
+            }
+            25% {
+                background-color: rgb(148, 198, 148);
+            }
+            50% {
+                background-color: red;
+            }
+            75% {
+                background-color: rgb(238, 175, 185);
+            }
+            100% {
+                background-color: bisque;
+            }
+        }
+
+        @keyframes rukiddingme {
+            0% {
+                left: 20px;
+            }
+            50% {
+                left: 40px;
+            }
+            100% {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="hair"></div>
+        <div class="eye-left">
+            <div class="iris-left"></div>
+        </div>
+        <div class="eye-right">
+            <div class="iris-right"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+    </div>
+</body>
+</html>
