@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        button {
+            font-size: 15px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5%;
+        }
+
+        #hiddenText {
+            display: none;
+            border: 1px solid black;
+        }
+
+        #toggleButton {
+            background-color: red;
+            margin-left: 200px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #catButton {
+            margin-left: 300px;
+            width: 500px;
+            height: 500px;
+            border-radius: 20%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            outline: none;
+            overflow: hidden;
+            transition: background-color 0.3s, width 0.3s, height 0.3s;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+
+        }
+
+        #catButton img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox"></div>
+    <button id="changeColorButton">presto change-o!</button>
+    <br>
+    <br>
+    <button id="toggleButton">my deep dark secret</button>
+    <div id="hiddenText">
+        wouldn't you like to know
+    </div>
+    <br>
+    <br>
+    <br>
+    <button id="catButton" class="image-button">
+        <img src="cat-face.jpeg" alt="Button Image">
+      </button>
+</body>
+
+<script>
+    const colorBox = document.getElementById("colorBox");
+    const changeColorButton = document.getElementById("changeColorButton");
+
+    const colors = ["red", "green", "yellow","blue", "black"];
+
+    changeColorButton.addEventListener("click", () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+        colorBox.style.backgroundColor = randomColor;
+    });
+
+    const toggleButton = document.getElementById("toggleButton");
+    const hiddenText = document.getElementById("hiddenText");
+
+    toggleButton.addEventListener("click", () => {
+        if (
+            hiddenText.style.display === "none" ||
+            hiddenText.style.display === ""
+        ) {
+            hiddenText.style.display = "block";
+            toggleButton.textContent = "back";
+        } else {
+            hiddenText.style.display = "none";
+            toggleButton.textContent = "my deep dark secret"
+        }
+    });
+
+    const clickableButton = document.getElementById("catButton");
+    const messages = [
+        "meow",
+        "meow meow meow",
+        "meow meow meow meow meow meow",
+        "meow meow meow meow meow meow meow meow meow",
+    ];
+
+    clickableButton.addEventListener("click", () => {
+        const randomWidth = Math.random() * 300;
+        const randomHeight = Math.random() * 300;
+
+        clickableButton.style.width = `${randomWidth}px`; 
+        clickableButton.style.height = `${randomHeight}px`;
+
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        alert(messages[randomIndex]);
+    });
+
+</script>
+</html>

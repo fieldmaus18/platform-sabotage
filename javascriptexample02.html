@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Example 02</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #hiddenText {
+        display: none; /* Hidden by default */
+        border: 1px solid black;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleButton">Show Text</button>
+    <div id="hiddenText">
+      This is the hidden text that becomes visible when the button is clicked!
+    </div>
+
+    <script>
+      // Get the elements from the HTML
+      const toggleButton = document.getElementById("toggleButton");
+      const hiddenText = document.getElementById("hiddenText");
+
+      // Event listener for button click
+      toggleButton.addEventListener("click", () => {
+        // Check if the hidden text is currently displayed
+        if (
+          hiddenText.style.display === "none" ||
+          hiddenText.style.display === ""
+        ) {
+          // If hidden, show the text
+          hiddenText.style.display = "block";
+          toggleButton.textContent = "Hide Text"; // Update button text
+        } else {
+          // If visible, hide the text
+          hiddenText.style.display = "none";
+          toggleButton.textContent = "Show Text"; // Update button text
+        }
+      });
+    </script>
+  </body>
+</html>
