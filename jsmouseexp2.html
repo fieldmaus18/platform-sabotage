@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+        }
+
+        .selected {
+            background-color: yellow;
+            width: 500px;
+            height: 500px;
+        }
+
+        #cursor {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        .trace {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".circle").click(function () {
+                $(this).toggleClass("selected");
+            });
+        });
+    </script>
+    <br>
+    <div id="cursor"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let currentSpeed = 100;
+            let slowdownInterval= 60 * 1000;
+            let lastSlowdown = Date.now();
+
+            $(document).mousemove(function (event) {
+                const now = Date.now();
+
+                if (now - lastSlowdown > slowdownInterval) {
+                    currentSpeed *= 1.25;
+                    lastSlowdown = now;
+                }
+
+                $("#cursor").stop().animate(
+                    {
+                        left: event.pageX,
+                        top: event.pageY,
+                    },
+                    currentSpeed
+                );
+
+                let trace = $('<div class="trace"></div>').appendTo("body");
+
+                trace.css({
+                    left: event.pageX + "px",
+                    top: event.pageY + "px",
+                    opacity: 1,
+                });
+
+                trace.animate (
+                    {
+                        opacity: 0,
+                    },
+                    1000,
+                    function () {
+                        $(this).remove();
+                    }
+                );
+            });
+        });
+    </script>
+    
+</body>
+</html>
